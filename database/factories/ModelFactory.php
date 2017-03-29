@@ -29,5 +29,14 @@ $factory->define(App\Link::class, function (Faker\Generator $faker) {
         'title' => $faker->name,
         'url' => $faker->url,
         'description' => $faker->paragraph,
+        'theme_id' => $faker->numberBetween(1, 10),
+    ];
+});
+
+/* themes table */
+$factory->define(App\Theme::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+        'info' => $faker->paragraph,
     ];
 });

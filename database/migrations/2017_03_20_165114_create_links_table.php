@@ -18,7 +18,14 @@ class CreateLinksTable extends Migration
             $table->string('title');
             $table->string('url')->unique();
             $table->text('description');
+            $table->integer('theme_id');
             $table->timestamps();
+        });
+
+        Schema::table('links', function (Blueprint $table) {
+            $table->foreign('theme_id')
+                  ->references('id')->on('themes')
+                  ->onDelete('cascade');
         });
     }
 
@@ -30,5 +37,6 @@ class CreateLinksTable extends Migration
     public function down()
     {
         Schema::dropIfExists('links');
+
     }
 }

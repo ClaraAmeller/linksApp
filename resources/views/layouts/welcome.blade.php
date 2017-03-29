@@ -50,7 +50,7 @@
 
             /* To me: added for the footer */
             .footer {
-                position: fixed;
+                position: absolute;
                 right: 0;
                 bottom: 0;
                 left: 0;
@@ -107,7 +107,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                  <a href="{{ url('/themes') }}" class="normal-no-link">Laravel</a>
+                  Laravel
                 </div>
 
                 <!--<div class="links">
